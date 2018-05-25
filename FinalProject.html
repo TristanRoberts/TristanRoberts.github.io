@@ -1,0 +1,76 @@
+<html>
+   <head>
+  	<title>Date Night</title>
+  	<h1> Tip Calculator </h1>
+   </head>
+   <body>
+   
+   <style>
+   	body {
+  		 background-color: lightblue;
+   }
+   
+   .firstclass {
+   	float: left;
+   	width: 600px;
+   }
+   
+    .secondclass {
+   float: left;
+   }
+   </style>
+  	
+<div class="firstclass">
+  	<p>Find the total cost of the meal by inputting the cost of the meal and the percent tip. </p>
+  	<p>Meal cost? (without tip) <input id='cost' size=10> (Exclude symbols) </p>
+  	<p>Percent tip? <input id='percent' size=10> (Exclude symbols) </p>
+  	
+  	<p><button onClick='doLoop()'>Calculate!</button></p>
+  
+  	<p><div id="results"></div></p>
+</div>
+  	
+  	<script type='text/javascript'>
+     	function doLoop() {
+        	//put the value of the text box in a var called sayWhat
+        	var howMuch = document.getElementById('cost').value;
+        	var newMuch = document.getElementById('newCost').value;
+    	    //put the value of the dropdown box in a var called maxLoop
+        	var percentage = document.getElementById('percent').value;
+        	var tipMoney = document.getElementById('tipMoney').value;
+        	var str = ''; // where we'll store our output temporarily.
+        	var stre = ''; // for tipMoney and newMuch
+        	
+        
+
+        	for (var i=1; (i<=percentage); i++) {
+               str= +howMuch+(howMuch * (percentage / 100))+ ' dollars total' + '<br>'; 
+        	}
+            document.getElementById("results").innerHTML=str;
+    '</br>'
+
+    
+    for (var o=1; (o<=tipMoney); o++) {
+               stre= +((tipMoney/newMuch)*100)+ '% tip' + '<br>'; 
+        	}
+            document.getElementById("newResults").innerHTML=stre;
+    '</br>'
+     	}
+  	</script>
+  	
+
+<div class="secondclass">
+  <p>Find the percent tip by inputting the cost of the meal and how much money is put towards the tip. </p>
+  
+  <p>Meal cost? (without tip) <input id='newCost' size=10> (Exclude symbols) </p>
+  <p>Money for tip? <input id='tipMoney' size=10> (Exclude symbols) </p>
+  <p><button onClick='doLoop()'>Calculate!</button></p>
+  <p><div id="newResults"></div></p>
+</div>
+
+  
+ 
+  	
+  	
+   </body>
+</html>
